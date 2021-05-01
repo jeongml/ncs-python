@@ -20,7 +20,7 @@ class Calculator:
     # 실행부
     @staticmethod
     def execute():
-        calc = Calculator(int(input("첫번째 수 : ")), int(input("두번째 수 : ")))
+        calc = Calculator(int(input("첫번째 수를 입력하세요. : ")), int(input("두번째 수를 입력하세요. : ")))
         # print(f'첫번째 수 : {calc.first}')
         # print(f'두번째 수 : {calc.second}')
         print(f'{calc.first} + {calc.second} = {calc.sum()}')

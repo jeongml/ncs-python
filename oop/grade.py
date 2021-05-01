@@ -18,9 +18,9 @@ class Grade:
 
     @staticmethod
     def main():
-        student_name = Grade(input("학생 이름 입력 : "))
+        student_name = Grade(input("학생 이름을 입력하세요. : "))
         for subject in ['국어', '영어', '수학']:
-            student_name.addMarks(int(input(subject + " 점수 입력 : ")))
+            student_name.addMarks(int(input(subject + " 점수를 입력하세요. : ")))
         subject_avg = student_name.avg()
         if subject_avg >= 90:
             grade = "A"
