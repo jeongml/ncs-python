@@ -31,5 +31,6 @@ if __name__ == '__main__':
             app.learning('train.csv', 'test.csv')
         if menu == '4':
             print('---------- 머신생성 실행 ----------')
+            app.submit('train.csv', 'test.csv')
         elif menu == '0':
             break

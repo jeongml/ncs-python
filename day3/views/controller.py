@@ -1,6 +1,7 @@
 from day3.models.dataset import Dataset
 from day3.models.service import Service
 import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
 
 
 class Controller(object):
@@ -108,20 +109,9 @@ class Controller(object):
         print(f'KNN 검증 정확도 : {service.accuracy_by_knn(this)}')
         print(f'SVM 트리 검증 정확도 : {service.accuracy_by_svm(this)}')
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    def submit(self, train, test):
+        this = self.modeling(train, test)
+        clf = RandomForestClassifier()
+        clf.fit(this.train, this.label)
+        prediction = clf.predict(this.test)
+        pd.DataFrame({'PassengerId': this.id, 'Survived': prediction}).to_csv('./data/submission.csv', index=False)
